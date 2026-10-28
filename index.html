@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudyFlow | Study Timetable Planner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <div class="logo">✦</div>
+      <p class="eyebrow">PLAN YOUR WEEK, YOUR WAY</p>
+      <h1>StudyFlow</h1>
+      <p class="subtitle">A simple space to organize your study sessions.</p>
+    </header>
+
+    <section class="panel form-panel">
+      <div>
+        <p class="eyebrow">MAKE A PLAN</p>
+        <h2>Add a study session</h2>
+      </div>
+      <form id="session-form">
+        <div class="field">
+          <label for="subject">Subject</label>
+          <input id="subject" maxlength="60" placeholder="e.g. Mathematics" required>
+        </div>
+        <div class="field">
+          <label for="day">Day</label>
+          <select id="day">
+            <option>Monday</option><option>Tuesday</option><option>Wednesday</option>
+            <option>Thursday</option><option>Friday</option><option>Saturday</option><option>Sunday</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="time">Study time</label>
+          <input id="time" type="time" required>
+        </div>
+        <div class="field">
+          <label for="topic">Topic / activity</label>
+          <input id="topic" maxlength="100" placeholder="e.g. Revise chapter 2">
+        </div>
+        <button class="primary" type="submit">Add to timetable <span>↗</span></button>
+        <p id="message" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="panel timetable-panel">
+      <div class="section-heading">
+        <div><p class="eyebrow">YOUR WEEK</p><h2>Study timetable</h2></div>
+        <span id="session-count" class="count">0 sessions</span>
+      </div>
+      <div id="timetable" class="timetable"></div>
+      <p id="empty" class="empty">Your timetable is empty. Add your first study session above. 📚</p>
+      <button id="clear-all" class="clear" type="button">Clear all sessions</button>
+    </section>
+
+    <footer>Little by little, a little becomes a lot. <span>♡</span>
+      <p>Your timetable is saved in this browser on this device.</p>
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
